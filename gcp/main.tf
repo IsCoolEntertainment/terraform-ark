@@ -27,8 +27,3 @@ resource "google_storage_bucket_iam_member" "member" {
 resource "google_service_account_key" "heptio_ark_service_account_key" {
   service_account_id = "${google_service_account.heptio_ark_service_account.name}"
 }
-
-resource "local_file" "heptio_ark_service_account_key_json_file" {
-    content  = "${base64decode(google_service_account_key.heptio_ark_service_account_key.private_key)}"
-    filename = "credentials-ark"
-}
