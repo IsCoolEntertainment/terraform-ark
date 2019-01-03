@@ -9,6 +9,6 @@ variable "bucket_name" {
 }
 
 variable "kubernetes_namespace" {
-    description = "Kubernetes namespace for k8s objects"
-    default = "heptio-ark"
+  description = "Kubernetes namespace for k8s objects"
+  default     = "heptio-ark"
 }

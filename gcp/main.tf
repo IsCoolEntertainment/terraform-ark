@@ -5,10 +5,15 @@ resource "google_service_account" "heptio_ark_service_account" {
 }
 
 resource "google_project_iam_custom_role" "heptio_ark_role" {
-  role_id     = "heptio_ark.server"
-  title       = "Heptio Ark Server"
+  role_id = "heptio_ark.server"
+  title   = "Heptio Ark Server"
+
   permissions = ["compute.disks.get", "compute.disks.create", "compute.disks.createSnapshot", "compute.snapshots.get",
-                "compute.snapshots.create", "compute.snapshots.useReadOnly", "compute.snapshots.delete", "compute.projects.get"]
+    "compute.snapshots.create",
+    "compute.snapshots.useReadOnly",
+    "compute.snapshots.delete",
+    "compute.projects.get",
+  ]
 }
 
 resource "google_project_iam_member" "heptio_ark_iam_binding" {
